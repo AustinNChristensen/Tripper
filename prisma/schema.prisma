@@ -23,6 +23,11 @@ model Trip {
   id           String        @id @default(uuid())
   name         String
   description  String?
+  destination  String?
+  startDate    DateTime?
+  endDate      DateTime?
+  type         String?
+  message      String?
   ownerId      String
   owner        User          @relation("UserTrips", fields: [ownerId], references: [id])
   participants Participant[]
